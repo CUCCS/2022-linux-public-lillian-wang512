@@ -15,7 +15,7 @@
 
   #### 【介绍一下关于linux全部发行版本的简要概述--来自网络资料】
 
-![](img/version-overview.png)
+![img/version-overview.png](img/version-overview.png)
 
 参考资料：https://blog.csdn.net/qq_37996632/article/details/83759010
 
