@@ -15,7 +15,7 @@
 
   #### 【介绍一下关于linux全部发行版本的简要概述--来自网络资料】
 
-![img/version-overview.png](img/version-overview.png)
+![version-overview.png](img/version-overview.png)
 
 参考资料：https://blog.csdn.net/qq_37996632/article/details/83759010
 
@@ -41,7 +41,7 @@ ubuntu 20.04.2 LTS
 lsb_release -a
 ```
 
-![](img/release-version.jpg)
+![release-version.jpg](img/release-version.jpg)
 
 或者
 
@@ -49,7 +49,7 @@ lsb_release -a
 cat /etc/issue
 ```
 
-![](img/release-version2.jpg)
+![release-version2.jpg](img/release-version2.jpg)
 
 
 
@@ -63,7 +63,7 @@ cat /etc/issue
 uname -a 
 ```
 
-![](img/kernel-version.jpg)
+![kernel-version.jpg](img/kernel-version.jpg)
 
 或者
 
@@ -71,7 +71,7 @@ uname -a
 cat /proc/version
 ```
 
-![](img/kernel-version2.jpg)
+![kernel-version2.jpg](img/kernel-version2.jpg)
 
 得到当前linux内核版本信息：
 
@@ -89,7 +89,7 @@ CentOS Linux release 7.7.1908 (Core)
 cat /ect/issue
 ```
 
-![](img/aliyun-release-network1.jpg)
+![aliyun-release-network1.jpg](img/aliyun-release-network1.jpg)
 
 或者
 
@@ -97,7 +97,7 @@ cat /ect/issue
 lsb_release -a
 ```
 
-![](img/aliyun-release-network2.jpg)
+![aliyun-release-network2.jpg](img/aliyun-release-network2.jpg)
 
 
 
@@ -109,7 +109,7 @@ Linux version 3.10.0-1062.18.1.el7.x86_64
 cat /proc/version
 ```
 
-![](img/aliyun-kernel-version.jpg)
+![aliyun-kernel-version.jpg](img/aliyun-kernel-version.jpg)
 
 
 
@@ -137,7 +137,7 @@ https://ubuntu.com/server/docs/network-configuration
 sudo apt install net-tools
 ```
 
-![](img/hand-network.jpg)
+![hand-network.jpg](img/hand-network.jpg)
 
 这是检测出目前的网卡
 
@@ -145,7 +145,7 @@ sudo apt install net-tools
 ifconfig
 ```
 
-![](img/before-network.jpg)
+![before-network.jpg](img/before-network.jpg)
 
 ##### 2.找到对应文件
 
@@ -157,7 +157,7 @@ cd /etc/netplan
 ls
 ```
 
-![](img/netplan-ls.jpg)
+![netplan-ls.jpg](img/netplan-ls.jpg)
 
 ##### 3.进入vim编辑器，更改网卡设置
 
@@ -165,7 +165,7 @@ ls
 sudo vi /etc/netplan/00-installer-config.yaml
 ```
 
-![](img/add-network.jpg)
+![add-network.jpg](img/add-network.jpg)
 
 ##### 4.应用更改后的网卡配置
 
@@ -173,7 +173,7 @@ sudo vi /etc/netplan/00-installer-config.yaml
 sudo netplan apply
 ```
 
-![](img/apply-netplan.jpg)
+![apply-netplan.jpg](img/apply-netplan.jpg)
 
 
 
@@ -208,7 +208,7 @@ ifconfig
 链接：
 https://winscp.net/eng/download.php
 
-![](img/winscp-install.jpg)
+![winscp-install.jpg](img/winscp-install.jpg)
 
 ###### （2）找到要链接的ip
 
@@ -220,24 +220,24 @@ ip a
 
 获取，并且要把虚拟机的网卡一和网卡二改成相应形式，如下所示：
 
-![](img/network-card.jpg)
+![network-card.jpg](img/network-card.jpg)
 
-![](img\ip.jpg)
+![ip.jpg](img/ip.jpg)
 
 打开winscp，把虚拟机的主机和用户名密码都填好。
 
-![](img/winscp-start.jpg)
+![winscp-start.jpg](img/winscp-start.jpg)
 
 ###### （3）检测是否可以传输文件
 
 - 首先在scp的宿主机桌面上新建一个文件
 
-![](img/test-desktop.jpg)
+![test-desktop.jpg](img/test-desktop.jpg)
 
 - 在scp界面中找到新建的文件，右键点击上传
 - （我这里为了确保实验，所以在右侧虚拟机中也建好了实验用的文件夹，方便后来去虚拟机中找到）
 
-![](img/test-winscp.jpg)
+![test-winscp.jpg](img/test-winscp.jpg)
 
 - 打开虚拟机。输入指令
 
@@ -253,7 +253,7 @@ ip a
   ls
   ```
 
-  ![](img/test-examine.jpg)
+  ![test-examine.jpg](img/test-examine.jpg)
 
   打开shiyan文件夹底下的全部文件，就能找到shiyan.txt，确实已经上传成功了，所以证明这个用winscp上传文件的方法可行。
 
@@ -295,11 +295,11 @@ echo "hello world in 2022-03-09 from aliyun" > test
 ls
 ```
 
-![](img/aliyun-create-test-scp.jpg)
+![aliyun-create-test-scp.jpg](img/aliyun-create-test-scp.jpg)
 
 ###### （4）通过gitbush传入本机
 
-![](img/aliyun-test-sent.jpg)
+![aliyun-test-sent.jpg](img/aliyun-test-sent.jpg)
 
 ```
  scp root@101.133.158.177:/root/test ./
@@ -307,7 +307,7 @@ ls
 
 ###### （5）检查是否传入test
 
-![](img/aliyun-test-examine.jpg)
+![aliyun-test-examine.jpg](img/aliyun-test-examine.jpg)
 
 ```
 ls
@@ -339,7 +339,7 @@ touch 1234567890
 touch abcde      #给test-dir文件夹中添加内容
 ```
 
-![](img/aliyun-scp-create-dir.jpg)
+![aliyun-scp-create-dir.jpg](img/aliyun-scp-create-dir.jpg)
 
 ###### （2）用自带的scp把阿里云上的test-dir传入本地桌面上
 
@@ -354,7 +354,7 @@ scp -r root@101.133.158.177:/root/test-dir ./
 
 
 
-![](img/aliyun-scp-dir-desktop.jpg)
+![aliyun-scp-dir-desktop.jpg](img/aliyun-scp-dir-desktop.jpg)
 
 ###### （3）检查是否成功
 
@@ -366,7 +366,7 @@ ls   #检查是否传输成功
 $ scp desktop.ini root@101.133.158.177:/root/       #把传到本地桌面上的desktop.ini文件传输回去
 ```
 
-![](img/aliyun-scp-dir-desktop-examine.jpg)
+![aliyun-scp-dir-desktop-examine.jpg](img/aliyun-scp-dir-desktop-examine.jpg)
 
 检查到有desktop.ini文件即为成功。
 
@@ -374,7 +374,7 @@ $ scp desktop.ini root@101.133.158.177:/root/       #把传到本地桌面上的
 ls -la desktop.ini
 ```
 
-![](img/aliyun-scp-dir-examine.jpg)
+![aliyun-scp-dir-examine.jpg](img/aliyun-scp-dir-examine.jpg)
 
 
 
@@ -384,11 +384,11 @@ ls -la desktop.ini
 
 【查了将近3个小时找到的完美资料，告诉了免密登录的方法】
 
-证明一下：![](img/ssh-information.jpg)
+证明一下：![ssh-information.jpg](img/ssh-information.jpg)
 
 **【参考资料：https://zhuanlan.zhihu.com/p/266837573】**
 
-![](img/ssh-information-picture.png)
+![ssh-information-picture.png](img/ssh-information-picture.png)
 
 
 
@@ -442,9 +442,9 @@ ssh cuc@192.168.56.101
 
 配图：
 
-![](img/ssh-rsa.jpg)
+![ssh-rsa.jpg](img/ssh-rsa.jpg)
 
-![](img/ssh-rsa2.jpg)
+![ssh-rsa2.jpg](img/ssh-rsa2.jpg)
 
 
 
@@ -454,11 +454,11 @@ ssh cuc@192.168.56.101
 
 ##### 1.copy之前已经配置好的ssh到阿里云的虚拟机上去
 
-![](img/aliyun-ssh-copy.jpg)
+![aliyun-ssh-copy.jpg](img/aliyun-ssh-copy.jpg)
 
 ##### 2.检查，可以直接在本地进行免密登录了。
 
-![](img/aliyun-ssh-examine.jpg)
+![aliyun-ssh-examine.jpg](img/aliyun-ssh-examine.jpg)
 
 
 
@@ -496,7 +496,7 @@ ls
 
 打开，发现里面有名叫authorized_keys的文件，即为成功。
 
-![](img/ssh-search-authorized_keys.jpg)
+![ssh-search-authorized_keys.jpg](img/ssh-search-authorized_keys.jpg)
 
 ###### （2）winscp中寻找
 
@@ -504,6 +504,6 @@ winscp中找到的路径和我预想中不太一样……
 
 用搜索功能找了并且到了authorized_keys所在的文件下不过没有找到，个人认为应该是由于.ssh是隐藏文件夹，所以没有显示出来。
 
-![](img/winscp-search-authorized_keys.jpg)
+![winscp-search-authorized_keys.jpg](img/winscp-search-authorized_keys.jpg)
 
-![](img/winscp-search-authorized_keys2.jpg)
+![winscp-search-authorized_keys2.jpg](img/winscp-search-authorized_keys2.jpg)
