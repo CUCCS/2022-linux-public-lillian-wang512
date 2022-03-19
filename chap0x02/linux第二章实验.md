@@ -12,21 +12,13 @@ sudo apt-get update
 sudo apt-get install asciinema
 ```
 
-
-
 ![安装ascii](img/install-ascii-step1.jpg)
-
-
 
 ![安装ascii](img/install-ascii-step2.jpg)
 
 ![安装ascii](img/install-ascii-step3.jpg)
 
-
-
 ![安装ascii](img/login-ascii.jpg)
-
-
 
 ![安装ascii](img/login-ascii2.jpg)
 
@@ -52,8 +44,6 @@ $ sudo pip3 install asciinema
 
 
 
-
-
 ### 二、软件包管理
 
 #### 1.【软件包管理】：在目标发行版上安装 `tmux` 和 `tshark`
@@ -69,17 +59,11 @@ sudo apt install tshark
 
 [![安装tmux和tshark](https://asciinema.org/a/OjWcjzNCM8Sorn6HrHIxUUc3E.svg)](https://asciinema.org/a/OjWcjzNCM8Sorn6HrHIxUUc3E)
 
-
-
 由于tmux后来寻找截图的时候命令被吞掉了找不到，就只有检查tmux是否安装好的截图了
 
 ![检查tmux](img/tmux-examine.jpg)
 
-
-
 ![下载tshark](img/tshark-install.jpg)
-
-
 
 ![下载tshark](img/tshark-examie.jpg)
 
@@ -101,8 +85,6 @@ yum install wireshark   #centos上只有wireshark
 
 #### 2.【软件包管理】:查看`tmux`和`tshark`被安装到哪些路径
 
-
-
 ##### (1).ununtu
 
 ```linux
@@ -117,10 +99,6 @@ dpkg -L tshark
 
 [![查看tmux和tshark被安装到哪些路径](https://asciinema.org/a/FBqUt8qXicLIGAaYStANUCHaU.svg)](https://asciinema.org/a/FBqUt8qXicLIGAaYStANUCHaU)
 
-
-
-
-
 ##### (2).centos
 
 ```linux
@@ -131,17 +109,7 @@ dpkg -L tshark
  rpm -qal | grep wireshark           #查看tshark安装路径 
 ```
 
-
-
 [![centos查看安装路径](https://asciinema.org/a/s2xDc7SCqpk9gGgnSRSCOFWUi.svg)](https://asciinema.org/a/s2xDc7SCqpk9gGgnSRSCOFWUi)
-
-
-
-
-
-
-
-
 
 
 
@@ -149,18 +117,12 @@ dpkg -L tshark
 
 ##### (1).ubuntu
 
-卸载资料：
-
-https://blog.csdn.net/get_set/article/details/51276609
-
 ```linux
 apt-get --purge remove tshark     # 删除软件及其配置文件
 apt-get autoremove tshark         # 删除没用的依赖包       
 ```
 
 [![卸载tshark](https://asciinema.org/a/46l2zjEqdRSwvWnOtM4EAQrvm.svg)](https://asciinema.org/a/46l2zjEqdRSwvWnOtM4EAQrvm)
-
-
 
 ##### (2).centos
 
@@ -176,8 +138,6 @@ yum -y remove wireshark
 
 #### 4.【软件包管理】:验证 `tshark` 卸载结果
 
-
-
 ##### (1).ubuntu
 
 ```
@@ -186,8 +146,6 @@ dpkg -L tshark
 
 [![验证tshark卸载结果](https://asciinema.org/a/jIybi7XY6c1EKgH99sQxzZvkF.svg)](https://asciinema.org/a/jIybi7XY6c1EKgH99sQxzZvkF)
 
-
-
 ##### (2).centos
 
 ```linux
@@ -195,8 +153,6 @@ rpm -qal | grep wireshark
 ```
 
 [![centos卸载结果](https://asciinema.org/a/QhS9Oo1pDyLlB3hNTW3rVqssH.svg)](https://asciinema.org/a/QhS9Oo1pDyLlB3hNTW3rVqssH)
-
-
 
 
 
@@ -232,8 +188,6 @@ sudo grep -r "666" ./ --exclude=*.cast
 
 [![centos文件内容](https://asciinema.org/a/qhX4ulWAEd00mxzK62msYrA1J.svg)](https://asciinema.org/a/qhX4ulWAEd00mxzK62msYrA1J)
 
-
-
 ###### (2).找到文件名含666的文件
 
 ```linux
@@ -242,8 +196,6 @@ sudo find ./ -type f -name "*666*"
 ```
 
 [![centos找文件名](https://asciinema.org/a/NzPrzECLUU7OYEojvNMxwVzOM.svg)](https://asciinema.org/a/NzPrzECLUU7OYEojvNMxwVzOM)
-
-
 
 
 
@@ -267,11 +219,7 @@ rar: unrar examples.rar
 bzip2：bzip2 -d example.bz2
 ```
 
-
-
 [![文件压缩与解压缩](https://asciinema.org/a/fMsaxsyzbqdusxdYyEjcGqwzP.svg)](https://asciinema.org/a/fMsaxsyzbqdusxdYyEjcGqwzP)
-
-
 
 
 
@@ -300,19 +248,11 @@ cat /proc/meminfo | grep MemTotal 						#查看内存
 sudo fdisk -l | grep Disk                				#查看硬盘     
 ```
 
-
-
 [![硬件信息获取ububtu](https://asciinema.org/a/uESxZ48phcUHsoUHO99jqIwDy.svg)](https://asciinema.org/a/uESxZ48phcUHsoUHO99jqIwDy)
 
 #### 2.centos
 
 ##### (1).cpu
-
-```
-
-```
-
-
 
 [![cpu](https://asciinema.org/a/tUCznvpZZ2Z9hufLjlR5w40JA.svg)](https://asciinema.org/a/tUCznvpZZ2Z9hufLjlR5w40JA)
 
@@ -323,10 +263,6 @@ sudo fdisk -l | grep Disk                				#查看硬盘
 ##### (3).硬盘容量
 
 [![硬盘](https://asciinema.org/a/N1jXl3TkJKC59LdPeT9bo8t5R.svg)](https://asciinema.org/a/N1jXl3TkJKC59LdPeT9bo8t5R)
-
-
-
-
 
 
 
@@ -382,14 +318,22 @@ https://blog.csdn.net/qwqw3qee/article/details/90546564
 
 ### 九、参考资料
 
-加解压文件时的参考资料
+[加解压文件资料1](https://blog.csdn.net/weixin_43582443/article/details/115176004 )
 
-[加解压文件资料1]: https://blog.csdn.net/weixin_43582443/article/details/115176004
-[加解压文件资料2]: https://www.cnblogs.com/wxlf/p/8117602.html
-[加解压文件资料2]: https://blog.csdn.net/afei__/article/details/82619843
-[（rar）]: https://blog.51cto.com/oldboy/597515
-[（gzip）]: https://www.cnblogs.com/weixun/p/3151988.html
-[（bzip2）]: https://blog.csdn.net/belen_xue/article/details/51635460
-[（7zip）]: https://www.cnblogs.com/tommy-huang/p/13810508.html
-[centos安装asciinema资料]: https://zhuanlan.zhihu.com/p/56376724
-[ubuntu安装asciinema官网资料]: https://asciinema.org/docs/installation#installing-on-linux
+[加解压文件资料2]( https://www.cnblogs.com/wxlf/p/8117602.html )
+
+[加解压文件资料2]( https://blog.csdn.net/afei__/article/details/82619843 )
+
+[rar加解压](https://blog.51cto.com/oldboy/597515 )
+
+[gzip加解压](https://www.cnblogs.com/weixun/p/3151988.html )
+
+[bzip2加解压](https://blog.csdn.net/belen_xue/article/details/51635460 )
+
+[7zip](https://www.cnblogs.com/tommy-huang/p/13810508.html )
+
+[centos安装asciinema资料](https://zhuanlan.zhihu.com/p/56376724 )
+
+[ubuntu安装asciinema官网资料](https://asciinema.org/docs/installation#installing-on-linux )
+
+[卸载资料](https://blog.csdn.net/get_set/article/details/51276609)
