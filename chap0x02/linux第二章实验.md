@@ -1,10 +1,10 @@
 # linux第二章实验
 
+【注】：由于一开始有些不熟练，所以ububtu的软件包安装以及文件解压缩，以及ubuntu的文件管理这几个视频时间会很长……希望不会吵到老师和助教的眼睛TAT
+
 ### 一、安装好`asciinema`
 
 #### 1、ububtu
-
-[ubuntu安装asciinema官网资料]: https://asciinema.org/docs/installation#installing-on-linux
 
 ```linux
 sudo apt-add-repository ppa:zanchey/asciinema
@@ -40,8 +40,6 @@ $ sudo yum install python-pip
 $ sudo pip3 install asciinema
 ```
 
-[centos安装asciinema资料]: https://zhuanlan.zhihu.com/p/56376724
-
 
 
 ### 二、软件包管理
@@ -57,7 +55,7 @@ sudo apt install tshark
 
 第一个安装的视频不知道什么原因有的地方缺失了（我有注意到不去调整窗口大小），其他视频是完好的，所以为了补充第一个视频缺失的部分就截图补充一下。
 
-[![安装tmux和tshark](https://asciinema.org/a/OjWcjzNCM8Sorn6HrHIxUUc3E.svg)](https://asciinema.org/a/OjWcjzNCM8Sorn6HrHIxUUc3E)
+[![安装tmux和tshark](https://asciinema.org/a/477709.svg)](https://asciinema.org/a/477709)
 
 由于tmux后来寻找截图的时候命令被吞掉了找不到，就只有检查tmux是否安装好的截图了
 
@@ -79,7 +77,7 @@ yum install tmux
 yum install wireshark   #centos上只有wireshark
 ```
 
-[![centos安装tmux](https://asciinema.org/a/wQ1OvDjWr05W8WFW9Zo8zbmYA.svg)](https://asciinema.org/a/wQ1OvDjWr05W8WFW9Zo8zbmYA)
+[![centos安装tmux](https://asciinema.org/a/478096.svg)](https://asciinema.org/a/478096)
 
 
 
@@ -92,12 +90,14 @@ apt-cache depends tmux     #查看tmux的依赖包
 dpkg -L tmux
 ```
 
-```
+```linux
 apt-cache depends tshark  #查看tshark的依赖包
 dpkg -L tshark    
 ```
 
-[![查看tmux和tshark被安装到哪些路径](https://asciinema.org/a/FBqUt8qXicLIGAaYStANUCHaU.svg)](https://asciinema.org/a/FBqUt8qXicLIGAaYStANUCHaU)
+[![查看tmux和tshark被安装到哪些路径](https://asciinema.org/a/477728.svg)](https://asciinema.org/a/477728)
+
+
 
 ##### (2).centos
 
@@ -109,7 +109,7 @@ dpkg -L tshark
  rpm -qal | grep wireshark           #查看tshark安装路径 
 ```
 
-[![centos查看安装路径](https://asciinema.org/a/s2xDc7SCqpk9gGgnSRSCOFWUi.svg)](https://asciinema.org/a/s2xDc7SCqpk9gGgnSRSCOFWUi)
+[![centos查看安装路径](https://asciinema.org/a/478098.svg)](https://asciinema.org/a/478098)
 
 
 
@@ -122,7 +122,7 @@ apt-get --purge remove tshark     # 删除软件及其配置文件
 apt-get autoremove tshark         # 删除没用的依赖包       
 ```
 
-[![卸载tshark](https://asciinema.org/a/46l2zjEqdRSwvWnOtM4EAQrvm.svg)](https://asciinema.org/a/46l2zjEqdRSwvWnOtM4EAQrvm)
+[![卸载tshark](https://asciinema.org/a/477737.svg)](https://asciinema.org/a/477737)
 
 ##### (2).centos
 
@@ -132,7 +132,7 @@ yum -y remove wireshark
 
 由于存在可能卸载了依赖包就出现无法挽回的bug的情况，所以只卸载了软件，没有卸载依赖包。
 
-[![centos卸载tshark](https://asciinema.org/a/8kcfNcFiCtyskRPQKSHBiU6Gm.svg)](https://asciinema.org/a/8kcfNcFiCtyskRPQKSHBiU6Gm)
+[![centos卸载tshark](https://asciinema.org/a/478099.svg)](https://asciinema.org/a/478099)
 
 
 
@@ -140,11 +140,11 @@ yum -y remove wireshark
 
 ##### (1).ubuntu
 
-```
+```linux
 dpkg -L tshark
 ```
 
-[![验证tshark卸载结果](https://asciinema.org/a/jIybi7XY6c1EKgH99sQxzZvkF.svg)](https://asciinema.org/a/jIybi7XY6c1EKgH99sQxzZvkF)
+[![验证tshark卸载结果](https://asciinema.org/a/477749.svg)](https://asciinema.org/a/477749)
 
 ##### (2).centos
 
@@ -152,7 +152,7 @@ dpkg -L tshark
 rpm -qal | grep wireshark 
 ```
 
-[![centos卸载结果](https://asciinema.org/a/QhS9Oo1pDyLlB3hNTW3rVqssH.svg)](https://asciinema.org/a/QhS9Oo1pDyLlB3hNTW3rVqssH)
+[![centos卸载结果](https://asciinema.org/a/478101.svg)](https://asciinema.org/a/478101)
 
 
 
@@ -175,7 +175,7 @@ find | grep 666    #找到文件名含有666的
 grep -r 666        #找到文件内容有666的
 ```
 
-[![找到文件](https://asciinema.org/a/dZBOs4yQzD4KR1tLGDJUVcPG4.svg)](https://asciinema.org/a/dZBOs4yQzD4KR1tLGDJUVcPG4)
+[![找到文件](https://asciinema.org/a/478023.svg)](https://asciinema.org/a/478023)
 
 ##### 2.centos
 
@@ -186,7 +186,7 @@ cd /tmp
 sudo grep -r "666" ./ --exclude=*.cast 
 ```
 
-[![centos文件内容](https://asciinema.org/a/qhX4ulWAEd00mxzK62msYrA1J.svg)](https://asciinema.org/a/qhX4ulWAEd00mxzK62msYrA1J)
+[![centos文件内容](https://asciinema.org/a/478106.svg)](https://asciinema.org/a/478106)
 
 ###### (2).找到文件名含666的文件
 
@@ -195,7 +195,7 @@ cd /tmp
 sudo find ./ -type f -name "*666*"   
 ```
 
-[![centos找文件名](https://asciinema.org/a/NzPrzECLUU7OYEojvNMxwVzOM.svg)](https://asciinema.org/a/NzPrzECLUU7OYEojvNMxwVzOM)
+[![centos找文件名](https://asciinema.org/a/478108.svg)](https://asciinema.org/a/478108)
 
 
 
@@ -219,15 +219,21 @@ rar: unrar examples.rar
 bzip2：bzip2 -d example.bz2
 ```
 
-[![文件压缩与解压缩](https://asciinema.org/a/fMsaxsyzbqdusxdYyEjcGqwzP.svg)](https://asciinema.org/a/fMsaxsyzbqdusxdYyEjcGqwzP)
+[![文件压缩与解压缩](https://asciinema.org/a/478051.svg)](https://asciinema.org/a/478051)
+
+
+
+
 
 
 
 ### 五、 子进程管理实验
 
-- 【跟练】 子进程管理实验
+【跟练】 子进程管理实验
 
-[![跟练](https://asciinema.org/a/Q4byRTpCBrOp8RmikdQyAB4I7.svg)](https://asciinema.org/a/Q4byRTpCBrOp8RmikdQyAB4I7)
+[![跟练](https://asciinema.org/a/478075.svg)](https://asciinema.org/a/478075)
+
+
 
 
 
@@ -248,21 +254,25 @@ cat /proc/meminfo | grep MemTotal 						#查看内存
 sudo fdisk -l | grep Disk                				#查看硬盘     
 ```
 
-[![硬件信息获取ububtu](https://asciinema.org/a/uESxZ48phcUHsoUHO99jqIwDy.svg)](https://asciinema.org/a/uESxZ48phcUHsoUHO99jqIwDy)
+[![硬件信息获取ububtu](https://asciinema.org/a/478086.svg)](https://asciinema.org/a/478086)
+
+
 
 #### 2.centos
 
 ##### (1).cpu
 
-[![cpu](https://asciinema.org/a/tUCznvpZZ2Z9hufLjlR5w40JA.svg)](https://asciinema.org/a/tUCznvpZZ2Z9hufLjlR5w40JA)
+[![cpu](https://asciinema.org/a/478110.svg)](https://asciinema.org/a/478110)
 
 ##### (2).内存
 
-[![内存](https://asciinema.org/a/XtFAHFiltjuuwzlTyvfFfIAQ8.svg)](https://asciinema.org/a/XtFAHFiltjuuwzlTyvfFfIAQ8)
+[![内存](https://asciinema.org/a/478111.svg)](https://asciinema.org/a/478111)
 
 ##### (3).硬盘容量
 
-[![硬盘](https://asciinema.org/a/N1jXl3TkJKC59LdPeT9bo8t5R.svg)](https://asciinema.org/a/N1jXl3TkJKC59LdPeT9bo8t5R)
+[![硬盘](https://asciinema.org/a/478115.svg)](https://asciinema.org/a/478115)
+
+
 
 
 
@@ -300,40 +310,42 @@ sudo fdisk -l | grep Disk                				#查看硬盘
 
 ### 八、问题与思考
 
-1.报错（粉色弹窗）
+[1].报错（粉色弹窗）
 
-https://blog.csdn.net/qwqw3qee/article/details/90546564
+[ubuntu 18.04安装wireshark及网卡接口权限问题](https://blog.csdn.net/qwqw3qee/article/details/90546564)
 
-这个只是一个提示信息，点yes就行
+这个是ubuntu 18.04安装wireshark及网卡接口权限问题，第一次安装过程中可能会提示`Should non-superusers be able to capture packets?` 选`是`即可（默认是`否`）
 
 ![报错](img/error-tshark.png)
 
-2.在CentOS发行版本上安装tshark时，无法安装
+[2].在CentOS发行版本上安装tshark时，无法安装
 
 因为CentOS发行版本为安装包wireshark，用wireshark软件包。（会有提示信息的）
 
+[3].bzip2不能压缩文件夹，只能压缩里面的文件，而且文件内容不能为空。
 
+[4].有时候会出现无法解压文件，是因为出现了多个解压后相同的文件，改下文件名或者新建一个文件就行。
 
 
 
 ### 九、参考资料
 
-[加解压文件资料1](https://blog.csdn.net/weixin_43582443/article/details/115176004 )
+1.[加解压文件资料1](https://blog.csdn.net/weixin_43582443/article/details/115176004 )
 
-[加解压文件资料2]( https://www.cnblogs.com/wxlf/p/8117602.html )
+2.[加解压文件资料2]( https://www.cnblogs.com/wxlf/p/8117602.html )
 
-[加解压文件资料2]( https://blog.csdn.net/afei__/article/details/82619843 )
+3.[加解压文件资料2]( https://blog.csdn.net/afei__/article/details/82619843 )
 
-[rar加解压](https://blog.51cto.com/oldboy/597515 )
+4.[rar加解压](https://blog.51cto.com/oldboy/597515 )
 
-[gzip加解压](https://www.cnblogs.com/weixun/p/3151988.html )
+5.[gzip加解压](https://www.cnblogs.com/weixun/p/3151988.html )
 
-[bzip2加解压](https://blog.csdn.net/belen_xue/article/details/51635460 )
+6.[bzip2加解压](https://blog.csdn.net/belen_xue/article/details/51635460 )
 
-[7zip](https://www.cnblogs.com/tommy-huang/p/13810508.html )
+7.[7zip](https://www.cnblogs.com/tommy-huang/p/13810508.html )
 
-[centos安装asciinema资料](https://zhuanlan.zhihu.com/p/56376724 )
+8.[centos安装asciinema资料](https://zhuanlan.zhihu.com/p/56376724 )
 
-[ubuntu安装asciinema官网资料](https://asciinema.org/docs/installation#installing-on-linux )
+9.[ubuntu安装asciinema官网资料](https://asciinema.org/docs/installation#installing-on-linux )
 
-[卸载资料](https://blog.csdn.net/get_set/article/details/51276609)
+10.[卸载资料](https://blog.csdn.net/get_set/article/details/51276609)
