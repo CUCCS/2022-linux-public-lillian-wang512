@@ -13,7 +13,8 @@ script:
   - wget "https://c4pr1c3.github.io/LinuxSysAdmin/exp/chap0x04/web_log.tsv.7z"
   - 7z x -ot web_log.tsv.7z
   - ls -l
-  - echo "=============================="
+
+  - echo "==============================="
   - echo image
   - bash image.sh -h
   - bash image.sh -d images/ -q 50%
