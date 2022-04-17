@@ -7,7 +7,7 @@ function helpInfo {
 
 	echo -e "image.sh - 用于图像处理\n"
 
-	echo -e "Tips: 使用脚本前，先确认是否安装了ImageMagick，输入'sudo apt install imagemagick'进行安装\n"
+	echo -e "Tips: 使用脚本前，先确认是否安装了ImageMagick，没有安装的话，请输入'sudo apt install imagemagick'进行安装\n"
 
 	echo "Usage: bash image.sh [arguments]"
 
@@ -37,15 +37,14 @@ function helpInfo {
 
 #对jpeg格式图片进行图片质量压缩
 
-function QualityCompress {
+function CompressQuality {
 
 	dir=$1
-
 	pec=$2
-
+    #找到后缀符合的图片
 	images="$(find "$dir" -regex '.*\(jpg\|JPG\|jpeg\)')"
 
-        for img in $images;do
+        for img in $images ; do
 
 		fullname="$(basename "$img")"
 
@@ -57,7 +56,7 @@ function QualityCompress {
 
 	done
 
-	echo "成功压缩图片"
+	echo "压缩图片成功！"
 
 }
 
@@ -65,10 +64,9 @@ function QualityCompress {
 
 #对jpeg/png/svg格式图片在保持原始宽高比的前提下压缩分辨率
 
-function ResolutionCompress {
+function CompressResolution {
 
 	dir=$1
-
 	width=$2
 	
 	images="$(find "$dir" -regex '.*\(jpg\|JPG\|jpeg\|png\|PNG\|svg\|SVG\)')"
@@ -87,7 +85,7 @@ function ResolutionCompress {
 
         
 
-	echo "成功压缩分辨率"
+	echo "压缩分辨率成功！"
 
 }
 
@@ -111,11 +109,16 @@ function AddWatermark {
 
 		typename="${fullname##*.}"
 
-		convert "$img" -gravity southeast -fill red -pointsize 16 -draw "text 5,5 '$text'" ./"$filename"_output_w."$typename"
+		convert "$img" -gravity southeast -fill tomato -pointsize 16 -draw "text 5,5 '$text'" ./"$filename"_output_w."$typename"
+		#composite -gravity southeast -dissolve 80 /水印目录/mark.jpg $each $each 2>/dev/null
+		
+		#convert "$img" -gravity southeast -fill tomato -dissolve 80 -pointsize 16 -draw "text 5,5 '$text'" ./"$filename"_output_w."$typename"
 
+		#echo "添加水印成功！"
+		
 	done
 
-	echo "成功添加水印"
+	echo "添加水印成功！"
 
 }
 
@@ -141,7 +144,7 @@ function AddPrefix {
 
 	done
 
-	echo "成功添加前缀"
+	echo "添加前缀成功！"
 
 }
 
@@ -167,7 +170,7 @@ function AddSuffix {
 
         done
 
-        echo "成功添加后缀"
+        echo "添加后缀成功！"
 
 }
 
@@ -191,14 +194,11 @@ function Conversion {
 
 	done
 
-	echo "成功修改为JPG文件"
+	echo "修改成功！改为JPG文件"
 
 }
 
-
-
-#main
-
+#main主函数
 
 path=""
 
@@ -233,7 +233,7 @@ do
 		"-q")
 
 			if [[ "$2" != '' ]];then
-                QualityCompress "$path" "$2"
+                CompressQuality "$path" "$2"
 				shift 2
 			else
 				echo "请输入一个参数，例如: -q 50%"
@@ -245,7 +245,7 @@ do
 		"-r")
 
 			if [[ "$2" != '' ]];then
-				ResolutionCompress "$path" "$2"
+				CompressResolution "$path" "$2"
 				shift 2
 			else
 				echo "请输入一个参数，例如:-r 50"
@@ -260,7 +260,7 @@ do
 				AddWatermark "$path" "$2"
 				shift 2
 			else
-				echo "请输入水印文本，例如: -w hello"
+				echo "请输入水印文本，例如: -w “hello”"
 				exit 0
 			fi
 
@@ -298,7 +298,7 @@ do
 
 		"-h" | "--help")helpInfo; exit 0;;
 
-                *)echo "没有对应操作！使用-h查看帮助";exit 0
+                *)echo "输入错误！没有对应操作！使用-h查看帮助";exit 0
 
 
 	esac
