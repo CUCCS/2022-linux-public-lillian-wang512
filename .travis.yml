@@ -12,35 +12,35 @@ script:
   - 7z x -ot web_log.tsv.7z
   - ls -l
   - cd chap0x04/  
-  - cd codefile/ 
+  - cd bash-code/ 
   - echo "=============================="
-  - echo Task1
-  - bash task1.sh -h
-  - bash task1.sh -q 30
-  - bash task1.sh -r 80%
-  - bash task1.sh -w 5 guoxingzi
-  - bash task1.sh -p gxz
-  - bash task1.sh -s zxg
-  - bash task1.sh -t
+  - echo image
+  - bash image.sh -h
+  - bash image.sh -d images/ -q 50%
+  - bash image.sh -d images/ -r 50%
+  - bash image.sh -d images/ -w "https://github.com/CUCCS/2022-linux-public-lillian-wang512"
+  - bash image.sh -d images/ -p "P"
+  - bash image.sh -d images/ -s "s"
+  - bash image.sh -d images/ -c
   - echo "=============================="
-  - echo Task2
-  - bash task2.sh -h
-  - bash task2.sh -s 
-  - bash task2.sh -p 
-  - bash task2.sh -n 
-  - bash task2.sh -a 
+  - echo worldcup
+  - bash worldcup.sh -h
+  - bash worldcup.sh -ad
+  - bash worldcup.sh -p
+  - bash worldcup.sh -n
+  - bash worldcup.sh -am
   - echo "=============================="
-  - echo Task3
-  - bash task3.sh -h
-  - bash task3.sh -o 
-  - bash task3.sh -i 
-  - bash task3.sh -u 
-  - bash task3.sh -c 
-  - bash task3.sh -f 
-  - bash task3.sh -s /whats-new.html
-  - shellcheck task1.sh
-  - shellcheck task2.sh
-  - shellcheck task3.sh
+  - echo weblog
+  - bash weblog.sh -h
+  - bash weblog.sh -t
+  - bash weblog.sh -i
+  - bash weblog.sh -u
+  - bash weblog.sh -s
+  - bash weblog.sh -s4
+  - bash weblog.sh -uh /images/NASA-logosmall.gif
+  - shellcheck image.sh
+  - shellcheck worldcup.sh
+  - shellcheck weblog.sh
 notifications:
   email:
     on_success: never
