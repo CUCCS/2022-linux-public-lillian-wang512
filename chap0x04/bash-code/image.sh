@@ -264,7 +264,7 @@ do
 				AddWatermark "$path" "$2"
 				shift 2
 			else
-				echo "请输入水印文本，例如: -w “hello”"
+				echo "请输入水印文本，例如: -w hello"
 				exit 0
 			fi
 
