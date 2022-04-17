@@ -107,7 +107,7 @@ function SpecifiedURLHosts {
 
 	URL=$2
 
-	uh=$(sed '1d' "$file" | awk -F '\t' '{if($5=="'$URL'") {host[$1]++}} END{for (i in host) {print host[i],i}}' | sort -nr | head -n 100)
+	uh=$(sed '1d' "$file" | awk -F '\t' '{if($5=="'"$URL"'") {host[$1]++}} END{for (i in host) {print host[i],i}}' | sort -nr | head -n 100)
 
 	echo -e "URL: $URL\n\n${uh}" >> SpecifiedURLHost.log
 

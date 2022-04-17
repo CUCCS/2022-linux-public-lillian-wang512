@@ -132,7 +132,9 @@ function AddPrefix {
 
 	prefix=$2
 
-	for img in "$dir"; do
+	images="$(find "$dir" -regex '.*\(jpg\|JPG\|jpeg\|png\|PNG\|svg\|SVG\)')"
+
+	for img in $images; do
 
 		fullname="$(basename "$img")"
 
@@ -158,7 +160,9 @@ function AddSuffix {
 
         suffix=$2
 
-        for img in "$dir"; do
+		images="$(find "$dir" -regex '.*\(jpg\|JPG\|jpeg\|png\|PNG\|svg\|SVG\)')"
+
+        for img in $images; do
 
                 fullname="$(basename "$img")"
 
@@ -260,7 +264,7 @@ do
 				AddWatermark "$path" "$2"
 				shift 2
 			else
-				echo "请输入水印文本，例如: -w hello"
+				echo "请输入水印文本，例如: -w “hello”"
 				exit 0
 			fi
 

@@ -5,7 +5,7 @@ function helpInfo {
 
 	echo -e "worldcup.sh - 处理世界杯球员数据所写的程序\n"
 
-	echo -e "注意：处理数据之前，数据要和程序放在同一文件夹里\n"
+	echo -e "ATTENTION：处理数据之前，数据要和程序放在同一文件夹里\n"
 
 	echo "Usage: bash worldcup.sh [arguments]"
 
@@ -113,8 +113,9 @@ function Position {
 
 		#echo -e "$position\t$count\t${ratio}%"
 		#用printf左对齐打出表头
-		printf "%-15s %-15d %-10s\n" $position $count ${ratio}%
-
+		#printf "%-15s %-15d %-10s\n" $position $count ${ratio}%
+		printf "%-15s %-15d %-10s\n" $position $count "${ratio}"%
+		
 	done
 
 }
