@@ -1,0 +1,47 @@
+language: bash
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y shellcheck
+  - sudo apt-get install imagemagick
+  - sudo apt-get install p7zip-full
+  - sudo apt-get install ghostscript
+  - ls -l
+script:
+  - cd chap0x04/  
+  - cd bash-code/ 
+  - wget "https://c4pr1c3.github.io/LinuxSysAdmin/exp/chap0x04/worldcupplayerinfo.tsv"
+  - wget "https://c4pr1c3.github.io/LinuxSysAdmin/exp/chap0x04/web_log.tsv.7z"
+  - 7z x -ot web_log.tsv.7z
+  - ls -l
+
+  - echo "==============================="
+  - echo image
+  - bash image.sh -h
+  - bash image.sh -d images/ -q 50%
+  - bash image.sh -d images/ -r 50%
+  - bash image.sh -d images/ -w "https://github.com/CUCCS/2022-linux-public-lillian-wang512"
+  - bash image.sh -d images/ -p "P"
+  - bash image.sh -d images/ -s "s"
+  - bash image.sh -d images/ -c
+  - echo "=============================="
+  - echo worldcup
+  - bash worldcup.sh -h
+  - bash worldcup.sh -ad
+  - bash worldcup.sh -p
+  - bash worldcup.sh -n
+  - bash worldcup.sh -am
+  - echo "=============================="
+  - echo weblog
+  - bash weblog.sh -h
+  - bash weblog.sh -t
+  - bash weblog.sh -i
+  - bash weblog.sh -u
+  - bash weblog.sh -s
+  - bash weblog.sh -s4
+  - bash weblog.sh -uh /images/NASA-logosmall.gif
+  - shellcheck image.sh
+  - shellcheck worldcup.sh
+  - shellcheck weblog.sh
+notifications:
+  email:
+    on_success: never
